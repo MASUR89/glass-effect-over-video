@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "motion": "^12.23.26",
     "react-hook-form": "^7.68.0"
   }
 }

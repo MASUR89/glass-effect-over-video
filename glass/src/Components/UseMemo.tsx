@@ -1,54 +1,45 @@
-import { Formik, Form, Field } from "formik"
+import { motion } from "motion/react"
 
 const UseMemo = () => {
-
-//   const {register, handleSubmit, formState: {errors} } = useForm();
-
-//   const onSubmit = (data: any) => {
-//     console.log(data);
-//   }
-
-//   return (
-//      <div>
-//       <form onSubmit={handleSubmit(onSubmit)}>
-//         <input {...register("name",{required:"Name is required", minLength: {value: 12, message: "Name must be more than 2 characters"}})} placeholder='Username' />
-//         {errors.name && <p>{errors.name.message as string}</p>}
-//         <input {...register("email",{required:"Email is required"})} placeholder='Email' />
-//         {errors.email && <p>{errors.email.message as string}</p>}
-//         <input {...register("age",{required:"Indicate your age"})} placeholder='Your age' />
-//         {errors.age && <p>{errors.age.message as string}</p>}
-//         <input {...register("ID",{required:"Your ID number"})} placeholder='ID number' />
-//         {errors.id && <p>{errors.id.message as string}</p>}
-//         <input {...register("password",{required:"Password is required"})} placeholder='Password' />
-//         {errors.password && <p>{errors.password.message as string}</p>}
-//         <input {...register("confirmPassword",{required:"Confirm Password is required"})} placeholder='Confirm Password' />
-//         {errors.confirmPassword && <p>{errors.confirmPassword.message as string}</p>}
-//         <button>Submit</button>
-//       </form>
-//     </div>
-//   )
-// }
-
-
-
   return (
-     <>
-     <Formik
-      initialValues={{ userame: 'maia' }}
-      onSubmit={(values) => {
-        console.log(values);
-      }}
-     >
-      <Form>
-        <Field name="username" placeholder="user"/>
-      </Form>
-     </Formik>
-     </>
-    )
-  }
+    <div className="w-screen h-screen flex items-center overflow-hidden relative">
+      
+      <motion.div
+        className="w-[200px] h-[200px] bg-red-500 absolute left-0"
+        initial={{ x: "-200px", rotate: 0 }}
+        animate={{ x: "100vw", rotate: 360 }}
+        transition={{
+          duration: 2.5,
+          ease: "easeInOut",
+          repeat: Infinity
+        }}
+      />
+
+      <motion.div
+        className="w-[200px] h-[200px] bg-orange-500 absolute right-0"
+        initial={{ x: "200px", rotate: 0 }}
+        animate={{ x: "-100vw", rotate: -360 }}
+        transition={{
+          duration: 2.5,
+          ease: "easeInOut",
+          repeat: Infinity
+        }}
+      />
+
+    </div>
+  )
+}
+
+
 
 export default UseMemo
 
 
 //new subject: formik vs react-hook-form
+// framer-motion in react is a popular library for adding animations and transitions to React applications. It provides a simple and declarative API for creating complex animations with minimal code. Framer Motion allows developers to animate components, handle gestures, and create interactive UIs with ease. It supports features like spring animations, keyframes, layout animations, and shared layout transitions, making it a powerful tool for enhancing user experience in React applications.
+//initial
+// animate
+// transform
+// transition
+
 
