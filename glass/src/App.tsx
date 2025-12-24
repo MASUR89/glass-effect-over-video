@@ -1,15 +1,18 @@
+import './App.css';
+import useToggle from "./Components/UseToggle";
 
-import './App.css'
-import UseMemo from './Components/UseMemo'
+function App() {
+  const [isOn, toggle] = useToggle(true);
 
-
-const App = () => {
- 
   return (
-    <>
-      <UseMemo />
-    </>
-  )
+    <div>
+      <button onClick={toggle}>
+        {isOn ? "ON" : "OFF"}
+      </button>
+
+      <p>{isOn ? "true" : "false"}</p>
+    </div>
+  );
 }
 
-export default App
+export default App;

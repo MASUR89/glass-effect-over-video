@@ -1,6 +1,10 @@
 import { motion } from "motion/react"
 
+
 const UseMemo = () => {
+
+  // const [count, increment, decrement, reset] = New(5);
+
   return (
     <div className="w-screen h-screen flex items-center overflow-hidden relative">
       
@@ -25,7 +29,10 @@ const UseMemo = () => {
           repeat: Infinity
         }}
       />
-
+      count, 
+      increment, 
+      decrement, 
+      reset,
     </div>
   )
 }
